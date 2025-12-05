@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{general/plantilla :: head}"/>
+<body>
+<header th:replace="~{general/plantilla :: header}"></header>
+
+<main class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="fa-solid fa-user"></i> Perfil del usuario</h4>
+                </div>
+                <div class="card-body">
+
+                    <p><strong>Nombre:</strong> [[${usuarioLogueado.nombre}]] [[${usuarioLogueado.apellido}]]</p>
+                    <p><strong>Email:</strong> [[${usuarioLogueado.email}]]</p>
+                    <p><strong>Rol:</strong> [[${usuarioLogueado.rol.nombre}]]</p>
+                    <p><strong>Activo:</strong> [[${usuarioLogueado.activo} ? 'Sí' : 'No']]</p>
+
+                    <a th:href="@{'/usuario/modificar/' + ${usuarioLogueado.id}}" class="btn btn-warning mt-3">
+                        <i class="fas fa-pencil-alt"></i> Editar perfil
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer th:replace="~{general/plantilla :: footer}"></footer>
+</body>
+</html>

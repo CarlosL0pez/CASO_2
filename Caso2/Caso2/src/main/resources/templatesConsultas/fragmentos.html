@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{general/plantilla :: head}"/>
+<body>
+<header th:replace="~{general/plantilla :: header}"></header>
+
+<main class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            <h4><i class="fa-solid fa-database"></i> Consultas avanzadas</h4>
+        </div>
+        <div class="card-body">
+            <!-- Aquí meterías formularios/filtros que usen tus métodos de UsuarioRepository -->
+            <p>Página de consultas avanzadas sobre usuarios y roles.</p>
+        </div>
+    </div>
+</main>
+
+<footer th:replace="~{general/plantilla :: footer}"></footer>
+</body>
+</html>
